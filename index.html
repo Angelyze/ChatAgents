@@ -75,14 +75,14 @@
 
         <section id="portfolio">
             <h2 data-translate="portfolioTitle">Naš Portfolio Chatbotova</h2>
-            <p data-translate="portfolioSubtitle" class="portfolio-subtitle">Pogledajte neke od AI chatbot rješenja koja smo razvili za naše klijente. Naš portfolio neprestano raste!</p>
+            <p data-translate="portfolioSubtitle" class="portfolio-subtitle">Pogledajte neke od AI chatbot rješenja koja smo razvili za naše klijente. Kliknite za pregled!</p>
 
             <!-- Swiper -->
             <div class="swiper portfolio-swiper">
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                        <a href="#" target="_blank" class="portfolio-link" data-link-id="portfolio1">
+                        <a href="chatbot-angelyze.html" class="portfolio-link modal-trigger">
                             <div class="portfolio-item">
                                 <img src="chatbot_example.png" alt="Angelyze AI Assistant Example">
                                 <h3 data-translate="portfolio1Title">Angelyze AI Assistant</h3>
@@ -91,7 +91,7 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#" target="_blank" class="portfolio-link" data-link-id="portfolio2">
+                        <a href="chatbot-client-b.html" class="portfolio-link modal-trigger">
                             <div class="portfolio-item">
                                 <img src="placeholder-chatbot.png" alt="Primjer prilagođenog AI Chatbota za klijenta"> <!-- Replace with actual image -->
                                 <h3 data-translate="portfolio2Title">Chatbot za Klijenta B</h3>
@@ -101,7 +101,7 @@
                     </div>
                     <!-- Add more portfolio items wrapped in swiper-slide divs as needed -->
                      <div class="swiper-slide">
-                        <a href="#" target="_blank" class="portfolio-link" data-link-id="portfolio3">
+                        <a href="chatbot-client-c.html" class="portfolio-link modal-trigger">
                             <div class="portfolio-item">
                                 <img src="placeholder-chatbot-3.png" alt="Primjer prilagođenog AI Chatbota za klijenta C"> <!-- Replace with actual image -->
                                 <h3 data-translate="portfolio3Title">Chatbot za Klijenta C</h3>
@@ -110,7 +110,7 @@
                         </a>
                     </div>
                      <div class="swiper-slide">
-                        <a href="#" target="_blank" class="portfolio-link" data-link-id="portfolio4">
+                        <a href="chatbot-client-d.html" class="portfolio-link modal-trigger">
                             <div class="portfolio-item">
                                 <img src="placeholder-chatbot-4.png" alt="Primjer prilagođenog AI Chatbota za klijenta D"> <!-- Replace with actual image -->
                                 <h3 data-translate="portfolio4Title">Chatbot za Klijenta D</h3>
@@ -149,5 +149,16 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- ADD: Modal Structure -->
+    <div id="chatbot-modal" class="modal">
+        <div class="modal-overlay" aria-label="Close modal"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <iframe id="chatbot-iframe" src="about:blank" frameborder="0" title="Chatbot Preview" allow="clipboard-write; microphone"></iframe> <!-- Added permissions if needed -->
+        </div>
+    </div>
+    <!-- End Modal Structure -->
+
 </body>
 </html> 

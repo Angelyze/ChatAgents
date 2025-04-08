@@ -134,30 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const preferredLanguage = localStorage.getItem('preferredLanguage') || 'hr';
     setLanguage(preferredLanguage);
 
-    // --- Portfolio Link Setup ---
-    const portfolioLinks = {
-        portfolio1: "https://angelyze.org/", // Replace with actual URL
-        portfolio2: "#client-b-link",      // Replace with actual URL
-        portfolio3: "#client-c-link",      // Replace with actual URL
-        portfolio4: "#client-d-link"       // Replace with actual URL
-        // Add more mappings as needed: portfolioItemId: "destination URL"
-    };
-
-    document.querySelectorAll('.portfolio-link').forEach(link => {
-        const linkId = link.getAttribute('data-link-id');
-        if (portfolioLinks[linkId]) {
-            link.href = portfolioLinks[linkId];
-        }
-        // Optional: Add a more prominent visual cue on focus for accessibility
-        link.addEventListener('focus', () => {
-            link.style.outline = `2px solid ${getComputedStyle(document.documentElement).getPropertyValue('--primary-color')}`;
-            link.style.outlineOffset = '2px';
-        });
-        link.addEventListener('blur', () => {
-            link.style.outline = 'none';
-        });
-    });
-
     // --- Swiper Initialization ---
     const swiper = new Swiper('.portfolio-swiper', {
         // Optional parameters
@@ -197,5 +173,59 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // ADD: Modal Functionality
+    const modal = document.getElementById('chatbot-modal');
+    const modalOverlay = modal.querySelector('.modal-overlay');
+    const modalCloseBtn = modal.querySelector('.modal-close');
+    const chatbotIframe = document.getElementById('chatbot-iframe');
+    const modalTriggers = document.querySelectorAll('.modal-trigger'); // Select by new class
+
+    function openModal(url) {
+        if (!modal || !chatbotIframe) return;
+        chatbotIframe.src = url; // Set iframe src
+        modal.style.display = 'flex'; // Show modal (use flex to enable centering)
+        document.body.classList.add('modal-open'); // Prevent body scroll
+         // Focus the close button for accessibility
+        modalCloseBtn.focus();
+    }
+
+    function closeModal() {
+        if (!modal || !chatbotIframe) return;
+        modal.style.display = 'none'; // Hide modal
+        chatbotIframe.src = 'about:blank'; // Reset src
+        document.body.classList.remove('modal-open'); // Allow body scroll
+    }
+
+    // Add listeners to trigger links
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default link navigation
+            const chatbotUrl = trigger.getAttribute('href'); // Get URL from href
+            openModal(chatbotUrl);
+        });
+
+         // Optional: Add a more prominent visual cue on focus for accessibility
+         // (You might have this from the previous step, keep it)
+        trigger.addEventListener('focus', () => {
+            trigger.style.outline = `2px solid ${getComputedStyle(document.documentElement).getPropertyValue('--primary-color')}`;
+            trigger.style.outlineOffset = '2px';
+        });
+        trigger.addEventListener('blur', () => {
+            trigger.style.outline = 'none';
+        });
+    });
+
+    // Add listeners to close modal
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+
+     // Optional: Close modal with Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.style.display === 'flex') {
+            closeModal();
+        }
+    });
+    // END Modal Functionality
 
 }); 
