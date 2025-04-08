@@ -23,10 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
                      const year = new Date().getFullYear();
                      element.innerHTML = text.replace('%YEAR%', year);
                  }
-                // Handle standard elements
-                else {
-                    element.textContent = text;
-                }
+                 // Handle the logo specifically to allow HTML link
+                 else if (element.classList.contains('logo')) {
+                     element.innerHTML = text;
+                 }
+                 // Handle standard elements
+                 else {
+                     element.textContent = text;
+                 }
             }
         });
 
