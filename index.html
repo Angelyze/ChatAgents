@@ -26,6 +26,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ADD: Schema.org Markup for Organization/Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ChatAgents by Angelyze",
+      "url": "https://chatagents.vercel.app/",
+      "logo": "https://chatagents.vercel.app/chatbot_example.png", // Replace with your actual logo URL if different
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+385-98-645-482",
+        "contactType": "Customer Service",
+        "email": "info@angelyze.org",
+        "areaServed": "HR", // Croatia - Use ISO 3166-1 alpha-2 country code
+        "availableLanguage": ["Croatian", "English"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mali Lipovec 46",
+        "addressLocality": "Samobor",
+        "postalCode": "10430",
+        "addressCountry": "HR"
+      },
+      "founder": {
+         "@type": "Person",
+         "name": "Anđelko Horvat" // Assuming this based on Angelyze details
+      },
+      "sameAs": [ // Add links to social profiles if available for ChatAgents specifically
+        "https://angelyze.org/" // Link back to main Angelyze site
+        // "https://www.facebook.com/YourChatAgentsProfile",
+        // "https://www.twitter.com/YourChatAgentsProfile"
+      ],
+      "description": "Custom AI chatbot (ChatAgent) development service by Angelyze, enhancing website user experience and engagement in Croatia and internationally.",
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom AI Chatbot Development",
+          "description": "Development and implementation of bespoke AI-powered chatbots (ChatAgents) to improve website interaction, provide 24/7 support, and increase user engagement.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Angelyze"
+          },
+          "serviceType": "AI Chatbot Solutions"
+          // You could add areaServed or providerMobility if relevant
+        }
+      }
+    }
+    </script>
+    <!-- END: Schema.org Markup -->
+
 </head>
 <body>
 

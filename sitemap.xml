@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- Main Page -->
+<url>
+  <loc>https://chatagents.vercel.app/</loc>
+  <lastmod>2024-07-29</lastmod> <!-- IMPORTANT: Update this date whenever you make significant content changes -->
+  <changefreq>monthly</changefreq>
+  <priority>1.0</priority>
+</url>
+<!-- If you add separate pages for each chatbot later, add them here -->
+<!--
+<url>
+  <loc>https://chatagents.vercel.app/chatbot-angelyze.html</loc>
+  <lastmod>2024-07-29</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.8</priority>
+</url>
+-->
+</urlset> 
