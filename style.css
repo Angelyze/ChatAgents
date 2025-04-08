@@ -417,8 +417,8 @@ footer {
     padding-top: 40px; /* Make space for close button */
     width: 85%; /* Keep responsive width */
     height: 85%; /* Keep responsive height */
-    max-width: 400px; /* Adjusted Max width */
-    max-height: 600px; /* Adjusted Max height */
+    max-width: 420px; /* Adjusted Max width */
+    max-height: 620px; /* Adjusted Max height */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     z-index: 1052; /* Above overlay */
     display: flex; /* Use flex for iframe */
