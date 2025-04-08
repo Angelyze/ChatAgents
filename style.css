@@ -237,23 +237,51 @@ nav {
     /* Set a background or keep transparent */
 }
 
+/* Style the link wrapper */
+a.portfolio-link {
+    display: block; /* Make the link take up the card space */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    border-radius: var(--border-radius); /* Match card radius for focus outline */
+    transition: box-shadow var(--transition-speed); /* Add transition for focus/hover */
+}
+
+/* Apply hover/focus shadow to the link, affecting the item inside */
+a.portfolio-link:hover,
+a.portfolio-link:focus {
+    /* Optional: add subtle outline on focus for accessibility */
+    /* outline: 2px solid var(--primary-color); */
+    /* outline-offset: 2px; */
+}
+
+a.portfolio-link:hover .portfolio-item,
+a.portfolio-link:focus .portfolio-item {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
 .portfolio-item {
     background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     overflow: hidden;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    /* Remove transition from item itself, apply to link wrapper */
+    /* transition: transform var(--transition-speed), box-shadow var(--transition-speed); */
     display: flex;
     flex-direction: column;
     width: 250px; /* Fixed width */
     height: 400px; /* Fixed total height */
     margin-bottom: 20px; /* Space below items in mobile view if stacked */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed); /* Keep transition on item for hover effect */
 }
 
+/* Remove hover effect from item directly, handled by link hover */
+/*
 .portfolio-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
 }
+*/
 
 .portfolio-item img {
     width: 100%;

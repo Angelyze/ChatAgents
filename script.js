@@ -134,6 +134,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const preferredLanguage = localStorage.getItem('preferredLanguage') || 'hr';
     setLanguage(preferredLanguage);
 
+    // --- Portfolio Link Setup ---
+    const portfolioLinks = {
+        portfolio1: "https://angelyze.org/", // Replace with actual URL
+        portfolio2: "#client-b-link",      // Replace with actual URL
+        portfolio3: "#client-c-link",      // Replace with actual URL
+        portfolio4: "#client-d-link"       // Replace with actual URL
+        // Add more mappings as needed: portfolioItemId: "destination URL"
+    };
+
+    document.querySelectorAll('.portfolio-link').forEach(link => {
+        const linkId = link.getAttribute('data-link-id');
+        if (portfolioLinks[linkId]) {
+            link.href = portfolioLinks[linkId];
+        }
+        // Optional: Add a more prominent visual cue on focus for accessibility
+        link.addEventListener('focus', () => {
+            link.style.outline = `2px solid ${getComputedStyle(document.documentElement).getPropertyValue('--primary-color')}`;
+            link.style.outlineOffset = '2px';
+        });
+        link.addEventListener('blur', () => {
+            link.style.outline = 'none';
+        });
+    });
+
     // --- Swiper Initialization ---
     const swiper = new Swiper('.portfolio-swiper', {
         // Optional parameters
