@@ -415,10 +415,10 @@ footer {
     border-radius: var(--border-radius);
     padding: 20px;
     padding-top: 40px; /* Make space for close button */
-    width: 85%;
-    height: 85%;
-    max-width: 1000px; /* Max width */
-    max-height: 700px; /* Max height */
+    width: 85%; /* Keep responsive width */
+    height: 85%; /* Keep responsive height */
+    max-width: 400px; /* Adjusted Max width */
+    max-height: 500px; /* Adjusted Max height */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     z-index: 1052; /* Above overlay */
     display: flex; /* Use flex for iframe */
