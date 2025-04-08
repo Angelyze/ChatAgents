@@ -30,6 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
             portfolio1Desc: "AI asistent integriran na Angelyze.org, pruža informacije o uslugama i odgovara na upite korisnika.",
             portfolio2Title: "Chatbot za Klijenta B", // Translate or keep generic
             portfolio2Desc: "Prilagođeni chatbot za tvrtku [Ime Tvrtke B], dizajniran za [specifična svrha, npr. podršku korisnicima, odgovaranje na FAQ].", // Translate or keep generic
+            portfolio3Title: "Chatbot za Klijenta C", // Placeholder
+            portfolio3Desc: "Još jedan primjer chatbota.", // Placeholder
+            portfolio4Title: "Chatbot za Klijenta D", // Placeholder
+            portfolio4Desc: "Četvrti primjer chatbota.", // Placeholder
             contactTitle: "Kontaktirajte Nas",
             contactSubtitle: "Imate pitanja ili želite chatbot za svoju web stranicu? Javite nam se!",
             contactPhone: "Tel:",
@@ -63,6 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
             portfolio1Desc: "AI assistant integrated on Angelyze.org, providing information about services and answering user queries.",
             portfolio2Title: "Client B Chatbot", // Or provide specific name
             portfolio2Desc: "Custom chatbot for [Client B Company Name], designed for [specific purpose, e.g., customer support, FAQ answering].", // Or provide specific description
+            portfolio3Title: "Client C Chatbot", // Placeholder
+            portfolio3Desc: "Another chatbot example.", // Placeholder
+            portfolio4Title: "Client D Chatbot", // Placeholder
+            portfolio4Desc: "A fourth chatbot example.", // Placeholder
             contactTitle: "Contact Us",
             contactSubtitle: "Have questions or want a chatbot for your website? Get in touch!",
             contactPhone: "Phone:",
@@ -125,5 +133,45 @@ document.addEventListener('DOMContentLoaded', () => {
      // Try to load preferred language, default to Croatian ('hr')
     const preferredLanguage = localStorage.getItem('preferredLanguage') || 'hr';
     setLanguage(preferredLanguage);
+
+    // --- Swiper Initialization ---
+    const swiper = new Swiper('.portfolio-swiper', {
+        // Optional parameters
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true, // Optional: enables continuous loop mode
+        grabCursor: true,
+
+        // Pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 640px
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            // when window width is >= 992px
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+             // when window width is >= 1200px
+            1200: {
+                slidesPerView: 4, // Show 4 if space allows
+                spaceBetween: 30
+            }
+        }
+    });
 
 }); 
