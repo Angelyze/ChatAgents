@@ -503,4 +503,131 @@ body.modal-open {
     .cta-button { padding: 10px 20px; font-size: 0.9rem; }
     .hero-content p { font-size: 1rem; }
      .hero-image { max-width: 80%; }
-} 
+}
+
+/* --- Horizontal Portfolio Card Styles --- */
+
+/* Ensure horizontal link takes up space */
+a.portfolio-link-horizontal {
+    width: 90%; /* Make it slightly narrower than the slide width */
+    max-width: 600px; /* Max width for the horizontal card */
+    display: block;
+    margin: 0 auto; /* Center the link container */
+    border-radius: var(--border-radius);
+    transition: box-shadow var(--transition-speed);
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Apply hover/focus shadow to the horizontal link */
+a.portfolio-link-horizontal:hover .portfolio-item-horizontal,
+a.portfolio-link-horizontal:focus .portfolio-item-horizontal {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+/* Add focus outline */
+a.portfolio-link-horizontal:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+
+.portfolio-item-horizontal {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    align-items: center; /* Center items vertically */
+    background-color: var(--light-bg); /* Slightly different background */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    gap: 1.5rem; /* Space between image and text */
+    overflow: hidden;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    min-height: 180px; /* Minimum height */
+}
+
+.horizontal-card-image {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    width: 100px; /* Fixed image width */
+    height: 100px; /* Fixed image height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.horizontal-card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Fit logo within the container */
+    border-bottom: none; /* Remove border from vertical items */
+}
+
+.horizontal-card-content {
+    flex-grow: 1; /* Allow text content to take remaining space */
+    text-align: left; /* Align text left */
+}
+
+.horizontal-card-content h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    padding: 0;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.horizontal-card-content p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    padding: 0;
+    text-align: left;
+    line-height: 1.5;
+     /* Optional: limit lines if needed */
+    /* display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden; */
+}
+
+.learn-more-cue {
+    display: inline-block; /* Or block if you want it on its own line */
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+
+/* --- Responsive adjustments for Horizontal Card --- */
+@media (max-width: 640px) {
+    a.portfolio-link-horizontal {
+        width: 95%; /* Use more width on small screens */
+    }
+
+    .portfolio-item-horizontal {
+        flex-direction: column; /* Stack vertically */
+        text-align: center; /* Center text */
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .horizontal-card-image {
+        width: 80px; /* Adjust image size */
+        height: 80px;
+        margin-bottom: 0.5rem; /* Add space below image */
+    }
+
+    .horizontal-card-content {
+        text-align: center;
+    }
+     .horizontal-card-content h3,
+     .horizontal-card-content p {
+        text-align: center;
+     }
+}
+
+
+/* --- END Horizontal Card Styles --- */
+
+/* --- Swiper Navigation/Pagination --- */
+/* ... existing styles ... */ 
